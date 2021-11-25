@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ogm_trainee,access.ogm.trainee,model_ogm_trainee,base.group_user,1,1,1,1
+access_ogm_batch,access.ogm.batch,model_ogm_batch,base.group_user,1,1,1,1
+access_ogm_task,access.ogm.task,model_ogm_task,base.group_user,1,1,1,1
