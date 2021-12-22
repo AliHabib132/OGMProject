@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record id="seq_ogm_attendance" model="ir.sequence">
+            <field name="name">Attendance Record</field>
+            <field name="code">ogm.record</field>
+            <field name="prefix">ATT</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

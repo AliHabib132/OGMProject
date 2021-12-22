@@ -7,11 +7,11 @@
             <field name="model">ogm.task</field>
             <field name="arch" type="xml">
                 <tree string="Tasks">
-                    <field name="task_title"/>
-                    <field name="assigned_to" />
-                    <field name="task_date" />
-                    <field name="task_time" />
-                    <field name="state" />
+                    <field name="name"/>
+                    <field name="assigned_to"/>
+                    <field name="task_date"/>
+                    <field name="task_time"/>
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
@@ -21,15 +21,16 @@
             <field name="name">ogm.task.calendar</field>
             <field name="model">ogm.task</field>
             <field name="arch" type="xml">
-                <calendar string="Task Calendar" create="0" mode="month"
-                          date_start="task_date" color="task_title" quick_add="False">
-                    <field name="task_title"/>
-                    <field name="state" />
+                <calendar string="Task Calendar" mode="month"
+                          date_start="task_date" color="assigned_to">
+                    <field name="name" filters="1"/>
+                    <field name="assigned_to" filters="1"/>
+                    <field name="state" filters="1"/>
                 </calendar>
             </field>
         </record>
 
-         <!--    form view for the Tasks-->
+        <!--    form view for the Tasks-->
         <record id="task_form" model="ir.ui.view">
             <field name="name">ogm.task.form</field>
             <field name="model">ogm.task</field>
@@ -48,12 +49,17 @@
                     </header>
                     <sheet>
                         <group>
-                            <field name="task_title" />
-                            <field name="assigned_to" />
-                            <field name="task_date" />
-                            <field name="task_time" />
+                            <field name="name"/>
+                            <field name="assigned_to"/>
+                            <field name="task_date"/>
+                            <field name="task_time"/>
                         </group>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </form>
             </field>
         </record>
@@ -65,9 +71,9 @@
             <field name="res_model">ogm.task</field>
             <field name="view_mode">tree,form,calendar</field>
             <field name="help" type="html">
-              <p class="o_view_nocontent_smiling_face">
-                Create a new task!
-              </p>
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new task!
+                </p>
             </field>
         </record>
 

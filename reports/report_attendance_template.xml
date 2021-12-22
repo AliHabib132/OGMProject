@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_attendance_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+                        <div class="header">
+                            <t t-esc="o.name"/>
+                            <br/>
+                            <div style="float: right;">
+                                <div style="width:200px;">
+                                    <img style="width:100%;" t-att-src="image_data_uri(o.company_id.logo)"/>
+                                </div>
+                                <div style="margin: 20px 0 0 0; text-align: center;">
+                                    <span>
+                                        <strong>Date:</strong>
+                                    </span>
+                                    <span t-field="o.attendance_date" t-options='{"format": "dd/MM/yyyy"}'/>
+                                </div>
+                            </div>
+                        </div>
+                        <table style="width:100%; border:1px solid black">
+                            <tr>
+                                <th style="border:1px solid black; text-align: center;">Trainee</th>
+                                <th style="border:1px solid black; text-align: center;">Attended</th>
+                                <th style="border:1px solid black; text-align: center;">Remark</th>
+                                <th style="border:1px solid black; text-align: center;">Signature</th>
+                            </tr>
+                            <t t-foreach="o.trainee_id" t-as="t">
+                                <tr>
+                                    <td style="border:1px solid black; text-align: center;">
+                                        <t t-esc="t.trainee_id.name"/>
+                                    </td>
+                                    <td style="border:1px solid black; text-align: center;">
+                                        <t t-if="t.Attended">
+                                            <input type="checkbox" checked="True"/>
+                                        </t>
+                                        <t t-else="">
+                                            <input type="checkbox"/>
+                                        </t>
+                                    </td>
+                                    <td style="border:1px solid black; text-align: center;">
+                                        <t t-esc="t.note"/>
+                                    </td>
+                                    <td style="border:1px solid black; text-align: center;"></td>
+                                </tr>
+                            </t>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

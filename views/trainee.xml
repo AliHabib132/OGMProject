@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<!--    tree view for the trainees-->
+    <!--    tree view for the trainees-->
     <record id="trainee_tree" model="ir.ui.view">
         <field name="name">ogm.trainee.tree</field>
         <field name="model">ogm.trainee</field>
         <field name="arch" type="xml">
             <tree string="Trainees">
-                <field name="trainee_name"/>
+                <field name="name"/>
                 <field name="trainee_age"/>
                 <field name="batch_id"/>
             </tree>
         </field>
     </record>
 
-<!--    form view for the trainees-->
+    <!--    form view for the trainees-->
     <record id="trainee_form" model="ir.ui.view">
         <field name="name">ogm.trainee.form</field>
         <field name="model">ogm.trainee</field>
@@ -21,31 +21,43 @@
             <form string="Trainees">
                 <sheet>
                     <group>
-                        <field name="trainee_name"/>
+                        <field name="name"/>
                         <field name="trainee_age"/>
                         <field name="batch_id"/>
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>
 
-<!--    #action of the trainee module-->
+    <!--    #action of the trainee module-->
     <record id="action_trainee" model="ir.actions.act_window">
         <field name="name">Trainees</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">ogm.trainee</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
-          <p class="o_view_nocontent_smiling_face">
-            Create a new trainee!
-          </p>
+            <p class="o_view_nocontent_smiling_face">
+                Create a new trainee!
+            </p>
         </field>
     </record>
 
-<!--    #Trainee Menu-->
+    <!--    #Trainee Menu-->
     <menuitem id="ogm_root" name="OGM" sequence="0"/>
-    <menuitem id="ogm_trainee" name="Trainees" parent="ogm_root" action="action_trainee"/>
+    <menuitem id="ogm_trainee"
+              name="Trainees"
+              parent="ogm_root"
+              action="action_trainee"/>
+    <menuitem id="menu_create_attendance"
+              name="Create Attendance"
+              parent="ogm_root"
+              action="action_create_attendance"/>
 
 
 </odoo>

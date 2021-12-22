@@ -20,15 +20,19 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'security/security.xml',
+        'data/att_data.xml',
+        'views/attendance_view.xml',
         'views/trainee.xml',
         'views/batch.xml',
         'views/task.xml',
+        'reports/report_attendance_button.xml',
+        'reports/report_attendance_template.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

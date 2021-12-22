@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+    id="report_attendance_button"
+    model="ogm.attendance"
+    string="Attendance Sheet"
+    report_type="qweb-pdf"
+    name="ogm_project.report_attendance_template"
+    file="ogm_project.report_attendance_template"
+    />
+</odoo>
