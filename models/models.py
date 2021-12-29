@@ -19,7 +19,12 @@ class batch(models.Model):
     _description = 'Trainee Batches'
 
     name = fields.Char(string='Batch Number', required=True)
+    batch_description = fields.Selection([('electrical', 'Electrical'), ('scaffolding', 'Scaffolding'),
+                                          ('welding', 'Welding'), ('pipefitting', 'Pipefitting'),
+                                          ('instrumentation', 'Instrumentation'),
+                                          ('safety', 'Safety')], string="Batch Description")
     trainee_id = fields.One2many('ogm.trainee', 'batch_id', string='Trainees')
+
 
 
 class task(models.Model):

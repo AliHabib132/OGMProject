@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <tree string="Batches">
                 <field name="name"/>
+                <field name="batch_description"/>
             </tree>
         </field>
     </record>
@@ -25,6 +26,7 @@
                             <div>
                                 <strong class="o_kanban_record_title">
                                     <field name="name"/>
+                                    <field name="batch_description"/>
                                 </strong>
                             </div>
                         </div>
@@ -43,6 +45,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="batch_description"/>
                     </group>
                     <notebook>
                         <page string="Trainees">
@@ -50,13 +53,11 @@
                                 <tree>
                                     <field name="name"/>
                                     <field name="trainee_age"/>
-                                    <field name="batch_id" invisible="1"/>
                                 </tree>
                                 <form>
                                     <group>
                                         <field name="name"/>
                                         <field name="trainee_age"/>
-                                        <field name="batch_id" invisible="1"/>
                                     </group>
                                 </form>
                             </field>
