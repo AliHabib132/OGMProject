@@ -52,11 +52,13 @@
                             <field name="trainee_id" widget="many2many">
                                 <tree>
                                     <field name="name"/>
+                                    <field name="trainee_number"/>
                                     <field name="trainee_age"/>
                                 </tree>
                                 <form>
                                     <group>
                                         <field name="name"/>
+                                        <field name="trainee_number"/>
                                         <field name="trainee_age"/>
                                     </group>
                                 </form>
