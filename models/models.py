@@ -44,7 +44,7 @@ class task(models.Model):
     batch_id = fields.Many2one('ogm.batch', 'Batch')
     task_date = fields.Date(string="Date")
     task_time = fields.Datetime(string="Task Time")
-    task_end = fields.Datetime(string="Task Ends")
+    task_stop = fields.Datetime(string="Task Ends")
     state = fields.Selection([('draft', 'Draft'), ('confirm', 'Confirmed'),
                               ('done', 'Done'), ('cancel', 'Cancelled')], default='draft', string="Status")
 
